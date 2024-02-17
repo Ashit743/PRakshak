@@ -8,5 +8,5 @@ venv/
 *.log
 
 # ignore this particular file
-key.json
+secret_key.json
 
