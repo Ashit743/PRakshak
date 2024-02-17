@@ -1,4 +1,4 @@
-from app import app
+from app import app, get_data
 from flask import jsonify,abort
 from import_data import import_patient_data, import_doctor_data
 
@@ -27,3 +27,7 @@ def get_doctors_data():
             return jsonify({'message': 'Sorry no doctors available'}), 404
     return jsonify(doctors_data)
 
+@app.route('/api/test', methods=['GET'])
+def get_dummy_data():
+    db = get_data()
+    return db
