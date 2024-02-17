@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -12,12 +12,11 @@ import Button from '@mui/material/Button';
 import './Calendar.css'; // Import CSS file for custom styling
 import mockPatientEvents from '../../mock/patientsData.json'
 
-const events = mockPatientEvents
+let events = mockPatientEvents
 
 function MonthlyCalendar() {
   const [open, setOpen] = useState(false);
   const [eventInfo, setEventInfo] = useState(null);
-
 
 
   function handleEventClick(eventInfo) {
