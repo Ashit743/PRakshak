@@ -1,0 +1,82 @@
+/* doctorCards.css */
+
+.doctor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    margin: 10px;
+    max-width: 300px;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .doctor-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .doctor-details {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .doctor-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .doctor-details p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .doctor-details p:first-child {
+    font-weight: bold;
+  }
+  
+
+  /* doctorCards.css */
+
+.booking-form {
+    margin-top: 10px;
+  }
+  
+  .booking-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .booking-form input,
+  .booking-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .booking-form button.book-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .booking-form button.book-button:hover {
+    background-color: #0056b3;
+  }
+  

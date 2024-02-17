@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "Dr. John Doe", "specialty": "Cardiologist", "availability": "Mon, Wed, Fri" },
+    { "id": 2, "name": "Dr. Jane Smith", "specialty": "Dermatologist", "availability": "Tue, Thu, Sat" },
+    { "id": 3, "name": "Dr. Michael Johnson", "specialty": "Neurologist", "availability": "Mon, Tue" },
+    { "id": 4, "name": "Dr. Sarah Lee", "specialty": "Oncologist", "availability": "Wed, Fri" },
+    { "id": 5, "name": "Dr. Emily Brown", "specialty": "Pediatrician", "availability": "Thu, Sat" }
+  ]
+  

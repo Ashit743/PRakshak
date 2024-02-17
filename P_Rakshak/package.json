@@ -1,5 +1,5 @@
 {
-  "name": "p-rakshak",
+  "name": "prakshak",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@fullcalendar/core": "^6.1.10",
+    "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/interaction": "^6.1.10",
+    "@fullcalendar/react": "^6.1.10",
+    "@fullcalendar/timegrid": "^6.1.10",
+    "@mui/material": "^5.15.10",
     "react": "^18.2.0",
+    "react-calendar": "^4.8.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
