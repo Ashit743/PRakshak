@@ -6,3 +6,7 @@ venv/
 
 # Ignore log files
 *.log
+
+# ignore this particular file
+key.json
+
