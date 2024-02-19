@@ -1,3 +1,6 @@
 Flask==2.0.2
 firebase
 google-cloud-firestore
+firebase_admin
+flask-cors
+Werkzeug===2.2.2
