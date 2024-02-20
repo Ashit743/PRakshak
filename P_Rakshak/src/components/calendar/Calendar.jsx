@@ -10,7 +10,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import './Calendar.css'; // Import CSS file for custom styling
-import mockPatientEvents from '../../mock/patientsData.json'
+import mockPatientEvents from '../../mock/appointments.json'
 
 let events = mockPatientEvents
 
