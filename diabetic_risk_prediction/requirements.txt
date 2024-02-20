@@ -1,5 +1,0 @@
-joblib
-pandas
-numpy
-seaborn
-matplotlib
