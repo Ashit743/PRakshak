@@ -5,7 +5,7 @@ services:
     container_name: mlapp
     image: ash502/mlapp
     ports:
-      - "5000:5000"
+      - "5050:5050"
     build:
       context: .
       dockerfile: Dockerfile
