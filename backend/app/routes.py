@@ -3,12 +3,14 @@ from twilio.rest import Client
 import urllib.request;
 from dotenv import load_dotenv
 from app import app
+
 from flask_cors import CORS
 import os
 load_dotenv()
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
+
 
 # Create Flask app
 # app = Flask(__name__)
@@ -20,6 +22,7 @@ def index():
 @app.route('/about')
 def about():
     return 'This is a simple Flask application.'
+
 
 @app.route('/sendotp',methods=["post"])
 def sendotp():
@@ -72,3 +75,4 @@ def create_api_response(status, data=None, error=None):
 
   return response
     
+
