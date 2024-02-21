@@ -1,0 +1,11 @@
+version: "1.0"
+
+services:
+  mlapp:
+    container_name: mlapp
+    image: ash502/mlapp
+    ports:
+      - "5050:5050"
+    build:
+      context: .
+      dockerfile: Dockerfile
