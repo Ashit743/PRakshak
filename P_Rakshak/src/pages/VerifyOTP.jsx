@@ -7,6 +7,7 @@ import logo from "../assets/logo.png";
 import Stack from "@mui/material/Stack";
 import { verifyotp } from "../service/auth";
 import CustomAlert from "../components/UI/Alert";
+import { useNavigate } from "react-router";
 
 export default function VerifyOTP() {
   return (
@@ -216,6 +217,7 @@ function OTPInput() {
     alertMessage: "",
     type: "success",
   });
+  const navigate = useNavigate();
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -236,6 +238,7 @@ function OTPInput() {
         alertMessage: "Successfully Verified the OTP",
       }));
       console.log(response);
+      navigate("/");
     } catch (error) {
       setAlertState((prev) => ({
         ...prev,

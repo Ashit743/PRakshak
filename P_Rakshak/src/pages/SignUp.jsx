@@ -7,10 +7,11 @@ import logo from "../assets/logo.png";
 import Stack from "@mui/material/Stack";
 import { sendotp } from "../service/auth";
 import CustomAlert from "../components/UI/Alert";
-
+import {useNavigate} from 'react-router'
 export default function SignUp() {
   const [patiendID, setpatiendID] = useState("");
   const [phoneNO, setPhoneNO] = useState("");
+  const navigate=useNavigate()
   const [alertState, setAlertState] = useState({
     open: false,
     vertical: "top",
@@ -33,6 +34,7 @@ export default function SignUp() {
         open: true,
         alertMessage: "OTP sent Successfully",
       }));
+      navigate("/verify")
     } catch (error) {
       setAlertState((prev) => ({
         ...prev,
