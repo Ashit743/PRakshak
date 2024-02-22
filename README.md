@@ -28,9 +28,13 @@ On Windows:
 Install flask and run
 
         pip install flask
-
         flask run
 
+for running ML Model - need to have docker desktop
+         
+         cd app/api
+         docker run -p5050:5050 ash502/mlapp
+download the container and run it locally 
 
 
 
