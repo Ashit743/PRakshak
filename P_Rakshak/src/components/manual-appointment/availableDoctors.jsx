@@ -37,6 +37,7 @@ useEffect(() => {
 
     return (
         <>
+
         {loading && <p>Loading...</p>}
         <div class="doctor-container">
           {doctors.length > 0 && doctors.map(doctor => (

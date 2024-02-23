@@ -1,6 +1,5 @@
 Flask==2.0.2
-firebase
-google-cloud-firestore
-firebase_admin
-flask-cors
-Werkzeug===2.2.2
+twilio==8.13.0
+python-dotenv==1.0.0
+Werkzeug==2.2.2
+flask-cors==4.0.0
