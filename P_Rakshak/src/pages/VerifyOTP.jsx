@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import CardElement from "../components/UI/Card";
 import { Input as BaseInput } from "@mui/base/Input";
 import { Container, Typography, FormHelperText, Button } from "@mui/material";
-import logo from "../assets/logo.png";
+import logo from "../../public/assets/logo.png";
 import Stack from "@mui/material/Stack";
 
 import { sendotp, verifyotp } from "../service/auth";

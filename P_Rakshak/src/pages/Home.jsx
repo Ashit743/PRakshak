@@ -1,4 +1,4 @@
-import React from 'react
+import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import "../App.css"
 import SideBar from '../components/SideBar'

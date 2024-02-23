@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import CardElement from "../components/UI/Card";
-import logo from "../assets/logo.png";
+import logo from "../../public/assets/logo.png";
 
 import {
   Container,
