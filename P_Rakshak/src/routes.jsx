@@ -4,6 +4,7 @@ import {
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import VerifyOTP from "./pages/VerifyOTP";
+import Prediction from "./components/prediction/prediction"
 export const router = createBrowserRouter([
     {
         path: "/signup",
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
     },{
         path:"/verify",
         element:<VerifyOTP/>
+    },
+    {
+        path: "/prediction",
+        element:<Prediction/>
     }
 ])
 

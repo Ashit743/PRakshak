@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background-color: #6FB762;
+    color: #fff;  */
+  }
+  
+  .form-container {
+    margin-top: 20px;
+  }
+  
+  .response-container {
+    margin-top: 20px;
+  }
+  
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust margin as needed */
+  }

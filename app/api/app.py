@@ -1,11 +1,13 @@
 import pickle
 import logging
+from flask_cors import CORS
 with open("models/RMClassifier2.pkl", "rb") as f:
     model = pickle.load(f)
 
 from flask import Flask,jsonify, request
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def hello_world():
