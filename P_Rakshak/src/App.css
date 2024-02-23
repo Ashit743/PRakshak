@@ -1,7 +1,41 @@
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px #97d5e8;
+	border-radius: 5x;
+	-webkit-border-radius: 5x;
+	-moz-border-radius: 5x;
+	-ms-border-radius: 5x;
+	-o-border-radius: 5x;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: rgb(92, 92, 92);
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: rgb(92, 92, 92);
+  }
+
+
+
 .calendar {
-	margin-top: 1%;
-	margin-left: 2%;
-	margin-right: 2%;
+    /* margin-top: 1%; */
+    margin-left: 6%;
+    margin-right: 2%;
+    padding-top: 22px;
 }
 
 .nav-template {
@@ -109,7 +143,7 @@ body {
     padding: 1px;
     position: absolute;
     left: 38px;
-    top: 251px;
+    top: 0px;
 }
 
 .loader-line {
@@ -164,4 +198,47 @@ body {
     width: 8px;
     border-radius: 50%;
     left: 27px;
+}
+
+.vital-heading{
+	background-color: white;
+	padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+	color: #6FB762;
+}
+
+.vital-card{
+	background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+	max-width: 23%;
+}
+
+.test-report-box{
+	background-color: white;
+	padding: 15px;
+    border-radius: 5px;
+    /* text-align: center; */
+	color: #6FB762;
+}
+
+.prescription-wrapper{
+	background-color: white;
+	padding: 15px;
+    border-radius: 5px;
+    /* text-align: center; */
+	color: #6FB762;
+}
+
+.prescription-box{
+	background-color: #EEF6ED;
+	padding: 15px;
+    border-radius: 5px;
+	max-width: 31%;
+}
+
+.active{
+	background: #90cd88;
+	padding: 8px 20px;
 }
