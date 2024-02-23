@@ -165,3 +165,41 @@ body {
     border-radius: 50%;
     left: 27px;
 }
+
+.vital-heading{
+	background-color: white;
+	padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+	color: #6FB762;
+}
+
+.vital-card{
+	background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+	max-width: 23%;
+}
+
+.test-report-box{
+	background-color: white;
+	padding: 15px;
+    border-radius: 5px;
+    /* text-align: center; */
+	color: #6FB762;
+}
+
+.prescription-wrapper{
+	background-color: white;
+	padding: 15px;
+    border-radius: 5px;
+    /* text-align: center; */
+	color: #6FB762;
+}
+
+.prescription-box{
+	background-color: #EEF6ED;
+	padding: 15px;
+    border-radius: 5px;
+	max-width: 31%;
+}
