@@ -7,6 +7,9 @@ import "../App.css"
 import SideBar from '../components/SideBar'
 import Profile from '../components/Profile'
 import UserInfo from '../components/UserInfo'
+import VitalSign from '../components/VitalSign';
+import TestReports from '../components/TestReports';
+import Prescriptions from '../components/Prescriptions';
 export default function Home() {
   return (
     <div className="container-fluid p-0"> {/*main container*/}
@@ -23,21 +26,33 @@ export default function Home() {
             <div className='col patient-details-wrapper'>
               <div className='row'>
                 <div className='col-lg-3'>
-                 <div className='row'>
-                  <div className='col-12'>
-                    <Profile />
+                  <div className='row'>
+                    <div className='col-12'>
+                      <Profile />
+                    </div>
+                    <div className='col-12 mt-3'>
+                      <UserInfo />
+                    </div>
                   </div>
-                  <div className='col-12 mt-3'>
-                    <UserInfo /> 
-                  </div>
-                 </div>
-                  
                 </div>
-                  <div className='col'>
-                    <p>patient info</p>
+
+                <div className='col'>
+                  <div className='row'>
+                    <div className='col-12'>
+                      <VitalSign />
+                    </div>
+                    <div className='col-12 mt-3'>
+                      <TestReports />
+                    </div>
+                    <div className='col-12 mt-3'>
+                      <Prescriptions />
+                    </div>
                   </div>
+
+                </div>
+
               </div>
-             
+
             </div>
           </div>
         </div>
