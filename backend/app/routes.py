@@ -1,15 +1,17 @@
 from flask import Flask, render_template,request,jsonify,json;
+import pymysql
+from db import connection
 from twilio.rest import Client
 import urllib.request;
 from dotenv import load_dotenv
 from app import app
-
 from flask_cors import CORS
 import os
 load_dotenv()
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
+
 
 
 # Create Flask app
@@ -46,6 +48,22 @@ def verifyotp():
         service_id=os.environ['TWILIO_SERVICE_ID']
         verification_check = client.verify.v2.services(service_id).verification_checks.create(to="+91"+phonenumber, code=otp)
         return create_api_response("success",data=verification_check.status)
+    except Exception as e:
+        job_status = "Failure"
+        error_message = str(e)
+        return create_api_response(job_status,error=error_message)
+    
+
+@app.route('/api/patientData', methods=['POST'])
+def get_patientdata():
+    data = json.loads(request.data)
+    try:
+        id=data.get("id")
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM doctor where doctor_id= %s" %id)
+        d=cursor.fetchall()
+
+        return create_api_response("success",data=d)
     except Exception as e:
         job_status = "Failure"
         error_message = str(e)
