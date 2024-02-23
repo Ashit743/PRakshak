@@ -11,12 +11,37 @@ import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 import './Calendar.css'; // Import CSS file for custom styling
 import mockPatientEvents from '../../mock/appointments.json'
+import axios from 'axios'
 
-let events = mockPatientEvents
+const fetchUrl = 'https://api.example.com/data'
 
 function MonthlyCalendar() {
   const [open, setOpen] = useState(false);
   const [eventInfo, setEventInfo] = useState(null);
+  const [events,setData] = useState([])
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const fetchData = async () => {
+    setLoading(true);
+    setError(null);
+
+    try {
+        const response = await axios.get(fetchUrl);
+        setData(response.doctors);
+    } catch (error) {
+        setError(error);
+        setData(mockPatientEvents);
+        console.log("api failed fetching from mock..")
+    } finally {
+        setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
 
 
   function handleEventClick(eventInfo) {
@@ -30,6 +55,8 @@ function MonthlyCalendar() {
 
   return (
     <div className="calendar-container">
+      {loading && <p>Loading...</p>}
+      {events.length>0 && 
       <div className="calendar">
         <FullCalendar
           plugins={[timeGridPlugin, dayGridPlugin,interactionPlugin]} // Include interactionPlugin
@@ -48,6 +75,7 @@ function MonthlyCalendar() {
         //   droppable={true} // Make events droppable
         />
       </div>
+      }
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Event Details</DialogTitle>
         <DialogContent>

@@ -21,8 +21,6 @@ const DoctorCard = ({ id, name, specialty, availability }) => {
         title: 'Booked',
         start: `${bookingDate}T${bookingTime}:00`, // Assuming time format is 'HH:mm'
         doctor: name,
-        patientName: 'Your Name', // You can prompt for patient's name too
-        category: bookingCategory
       };
       console.log('New Booking:', newBooking);
       // You can perform further actions here, like adding the new booking to your array
@@ -34,9 +32,7 @@ const DoctorCard = ({ id, name, specialty, availability }) => {
       <div className="doctor-details">
         <h3>{name}</h3>
         <p>Specialty: {specialty}</p>
-        <p>Availability: {availability}</p>
         <div className="booking-form">
-          <label htmlFor="booking-date">Date:</label>
           <input
             type="date"
             id="booking-date"
@@ -44,24 +40,12 @@ const DoctorCard = ({ id, name, specialty, availability }) => {
             min={(new Date()).toISOString().split('T')[0]} // Set minimum date to current date
             onChange={(e) => setBookingDate(e.target.value)}
           />
-          <label htmlFor="booking-time">Time:</label>
           <input
             type="time"
             id="booking-time"
             value={bookingTime}
             onChange={(e) => setBookingTime(e.target.value)}
           />
-          <label htmlFor="booking-category">Category:</label>
-          <select
-            id="booking-category"
-            value={bookingCategory}
-            onChange={(e) => setBookingCategory(e.target.value)}
-          >
-            <option value="">Select Category</option>
-            <option value="checkup">Checkup</option>
-            <option value="labTest">Lab Test</option>
-            {/* Add more options as needed */}
-          </select>
           <button className="book-button" onClick={handleBookAppointment}>Book Appointment</button>
         </div>
       </div>

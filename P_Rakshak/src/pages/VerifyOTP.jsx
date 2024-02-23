@@ -5,7 +5,7 @@ import { Input as BaseInput } from "@mui/base/Input";
 import { styled } from "@mui/system";
 import { Container, Typography, FormHelperText, Button } from "@mui/material";
 
-import logo from "../assets/logo.png";
+
 import Stack from "@mui/material/Stack";
 export default function VerifyOTP() {
   return (
@@ -20,7 +20,7 @@ export default function VerifyOTP() {
       <CardElement>
         <Stack gap={2} useFlexGap={true}>
           <Stack justifyContent="center" alignItems="center">
-            <img src={logo} width="50" height="50" />
+            <img src="assets/logo.png" width="50" height="50" />
           </Stack>
           <Stack justifyContent="center" alignItems="center">
             <Typography variant="h5" gutterBottom sx={{ color: "green.dark" }}>

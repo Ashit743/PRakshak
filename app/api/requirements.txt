@@ -8,3 +8,4 @@ imbalanced-learn==0.4.3
 joblib==1.1.1
 Werkzeug==2.0.3
 flask==2.0.3
+flask-cors

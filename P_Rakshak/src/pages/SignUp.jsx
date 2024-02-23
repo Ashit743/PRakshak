@@ -9,7 +9,6 @@ import {
   Button,
 } from "@mui/material";
 
-import logo from "../assets/logo.png";
 import Stack from "@mui/material/Stack";
 
 
@@ -33,7 +32,7 @@ export default function SignUp() {
         <CardElement>
           <Stack gap={2} useFlexGap={true}>
             <Stack justifyContent="center" alignItems="center">
-              <img src={logo} width="50" height="50" />
+              <img src="assets/logo.png" width="50" height="50" />
             </Stack>
             <Stack justifyContent="center" alignItems="center">
               <Typography
