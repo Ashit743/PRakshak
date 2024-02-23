@@ -11,7 +11,7 @@ const DoctorComponent = () => {
     return (
         <>
             <h1>Available Doctors</h1>
-        <div class="doctor-container">
+        <div className="doctor-container">
           {doctors.map(doctor => (
             <DoctorCard
               key={doctor.id}

@@ -5,12 +5,11 @@ import { Input as BaseInput } from "@mui/base/Input";
 import { Container, Typography, FormHelperText, Button } from "@mui/material";
 import logo from "../assets/logo.png";
 import Stack from "@mui/material/Stack";
-import { verifyotp } from "../service/auth";
+import { sendotp, verifyotp } from "../service/auth";
 import CustomAlert from "../components/UI/Alert";
 import { useNavigate } from "react-router";
-import {styled } from '@mui/system';
-
-
+import { styled } from "@mui/system";
+import CountDownTimer from "../components/UI/Timer";
 export default function VerifyOTP() {
   return (
     <Container
@@ -266,7 +265,9 @@ function OTP({ separator, length, value, onChange }) {
 }
 
 function OTPInput() {
-  const [otp, setOtp] = React.useState("");
+  const [otp, setOtp] = useState("");
+  const [enableresend, setEnableresend] = useState(false);
+  const [timer, setTimer] = useState(30);
   const [alertState, setAlertState] = useState({
     open: false,
     vertical: "top",
@@ -289,13 +290,25 @@ function OTPInput() {
     try {
       const response = await verifyotp(otp);
       setOtp("");
-      setAlertState((prev) => ({
-        ...prev,
-        open: true,
-        alertMessage: "Successfully Verified the OTP",
-      }));
-      console.log(response);
-      navigate("/");
+      if (response.data.status!="Failure") {
+        setAlertState((prev) => ({
+          ...prev,
+          open: true,
+          alertMessage: "Successfully Verified the OTP",
+        }));
+        console.log(response);
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      }else{
+        setAlertState((prev) => ({
+          ...prev,
+          open: true,
+          type:"error",
+          alertMessage: "Please enter the valid OTP",
+        }));
+      }
+      
     } catch (error) {
       setAlertState((prev) => ({
         ...prev,
@@ -306,7 +319,29 @@ function OTPInput() {
       console.log(error);
     }
   };
-
+  const handleOnComplete = () => {
+    setEnableresend(true);
+  };
+  const resendHandler = async () => {
+    try {
+      const res = await sendotp(sessionStorage.getItem("phno"));
+      setAlertState((prev) => ({
+        ...prev,
+        open: true,
+        alertMessage: "OTP sent Successfully",
+      }));
+      setEnableresend(false);
+      setTimer(30);
+    } catch (error) {
+      setAlertState((prev) => ({
+        ...prev,
+        open: true,
+        alertMessage: "Some Error Occurred",
+        type: "error",
+      }));
+      console.log(error);
+    }
+  };
   return (
     <Box
       sx={{
@@ -338,7 +373,12 @@ function OTPInput() {
           justifyContent: "center",
         }}
       >
-        00:20
+        <CountDownTimer
+          duration={timer}
+          colors={["#ff9248", "#a20000"]}
+          colorValues={[10, 5]}
+          onComplete={handleOnComplete}
+        />
       </Box>
       <Button
         variant="outlined"
@@ -347,6 +387,8 @@ function OTPInput() {
           color: "black",
         }}
         size="small"
+        disabled={!enableresend}
+        onClick={resendHandler}
       >
         Resend
       </Button>

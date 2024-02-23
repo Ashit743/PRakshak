@@ -9,7 +9,6 @@ const CustomAlert = ({
   vertical = "top",
   horizontal = "center",
 }) => {
-  console.log(vertical, horizontal, type, handleClose);
   return (
     <Snackbar
       open={open}

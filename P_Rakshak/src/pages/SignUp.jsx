@@ -9,7 +9,6 @@ import { sendotp } from "../service/auth";
 import CustomAlert from "../components/UI/Alert";
 import {useNavigate} from 'react-router'
 export default function SignUp() {
-  const [patiendID, setpatiendID] = useState("");
   const [phoneNO, setPhoneNO] = useState("");
   const navigate=useNavigate()
   const [alertState, setAlertState] = useState({
@@ -20,14 +19,14 @@ export default function SignUp() {
     type: "success",
   });
 
-  const submitHandler = async () => {
-    console.log("patiendId", patiendID);
+  const submitHandler = async (e) => {
+    e.preventDefault()
     console.log("phoneNO", phoneNO);
     if (phoneNO === "" || phoneNO.length < 10) return;
     try {
       const response = await sendotp(phoneNO);
+      sessionStorage.setItem("phno",phoneNO)
       console.log(response);
-      setpatiendID("")
       setPhoneNO("")
       setAlertState((prev) => ({
         ...prev,
@@ -84,14 +83,6 @@ export default function SignUp() {
             </Typography>
           </Stack>
           <Box component="form" noValidate autoComplete="off" gap={10}>
-            <TextField
-              fullWidth={true}
-              id="outlined-basic"
-              label="Patient ID"
-              variant="outlined"
-              margin="normal"
-              onChange={(e) => setpatiendID(e.target.value)}
-            />
             <TextField
               fullWidth={true}
               id="outlined-basic"
