@@ -9,3 +9,8 @@ html, body {
     max-width: 1100px;
     margin: 40px auto;
   }
+
+  a{
+    color: black;
+    text-decoration: none;
+  }
