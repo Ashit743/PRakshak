@@ -130,9 +130,9 @@ def get_patientdata():
     #     return create_api_response("Failure", error="Not Authenticated")
     data = json.loads(request.data)
     try:
-        id=data.get("id")
+        id=data.get("number")
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM patient where patient_id= %s" %id)
+        cursor.execute("SELECT gender, blood_group, height, weight, allergies, disease FROM patient where patient_id in(SELECT patient_fk FROM user WHERE mobile_no= %s)" %id)
         d=cursor.fetchall()
 
         return create_api_response("Success",data=d)
@@ -151,7 +151,7 @@ def getUser():
     try:
         id=data.get("number")
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM user where mobile_no= %s" %id)
+        cursor.execute("SELECT patient_id,age FROM patient where patient_id in(SELECT patient_fk FROM user where mobile_no= %s)" %id)
         d=cursor.fetchall()
 
         return create_api_response("Success",data=d)
