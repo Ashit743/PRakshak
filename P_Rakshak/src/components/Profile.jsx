@@ -20,7 +20,7 @@ export default function Profile() {
             <div><strong>Age:</strong> <span>26</span></div>
           </div>
           <div className='col-12'>
-            <button type="button" class="btn btn-success w-100">View Profile</button>
+            <button type="button" className="btn btn-success w-100">View Profile</button>
           </div>
         </div>
       </div>
