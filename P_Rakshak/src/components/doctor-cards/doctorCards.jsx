@@ -27,7 +27,7 @@ const DoctorCard = ({ id, name, specialty, availability }) => {
     };
 
   return (
-    <div className="doctor-card">
+    <div className="doctor-card col-3 mb-4 p-4">
       <img src={`https://picsum.photos/300/200?random=${randomImageId}`} alt={`Dr. ${name}`} />
       <div className="doctor-details">
         <h3>{name}</h3>

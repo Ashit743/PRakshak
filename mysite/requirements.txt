@@ -1,0 +1,9 @@
+langchain==0.0.340
+urllib3==2.0.7
+Django==4.2.7
+pdfminer.six==20221105
+unidecode
+openai==0.28.1
+python-dotenv
+djangorestframework==3.14.0
+tiktoken==0.5.1

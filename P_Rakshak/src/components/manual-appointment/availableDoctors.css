@@ -1,3 +1,14 @@
 .doctor-container{
     display: flex;
 }
+
+.doctor-available-wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 95vh;
+    padding: 0 26px 
+}
+
+.child-components:has(.doctor-container){
+    padding-right: 10px!important;
+}
