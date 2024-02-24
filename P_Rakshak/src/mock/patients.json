@@ -21,7 +21,8 @@
       "blood_pressure": "120/80 mmHg",
       "heart_rate": 72,
       "temperature": "98.6°F",
-      "respiratory_rate": 16
+      "respiratory_rate": 16,
+      "glucose": "120 mg/dL"
     },
     "lab_results": {
       "blood_tests": {

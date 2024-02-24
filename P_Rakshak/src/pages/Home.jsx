@@ -1,7 +1,4 @@
 import React from 'react'
-// import MonthlyCalendar from '../components/calendar/Calendar'
-// import DoctorComponent from '../components/manual-appointment/availableDoctors'
-
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import "../App.css"
 import Profile from '../components/Profile'
@@ -14,10 +11,9 @@ export default function Home() {
     <div className="container-fluid"> {/*main container*/}
 
       <div className='row'> {/*main row*/}
-
         <div className='col-lg-12'> {/*main column*/}
-
           <div className='row'>
+           
             <div className='col patient-details-wrapper'>
               <div className='row'>
                 <div className='col-lg-3'>
@@ -54,9 +50,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
   )
 }

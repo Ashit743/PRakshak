@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import mockDoctorData from '../../mock/doctorsSlots.json'
-import DoctorCard from '../doctor-cards/doctorCards';
-import './availableDoctors.css'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import mockDoctorData from "../../mock/doctorsSlots.json";
+import DoctorCard from "../doctor-cards/doctorCards";
+import "./availableDoctors.css";
+import { getDoctorSlots } from "../../service/doctors";
 
-// Define the available doctors data
-const fetchUrl = 'https://api.example.com/data'
+
 
 // Define the Doctor component
 const DoctorComponent = () => {
@@ -18,28 +17,28 @@ const DoctorComponent = () => {
     setError(null);
 
     try {
-        const response = await axios.get(fetchUrl);
-        setData(response.doctors);
+      const response = await getDoctorSlots();
+      setData(response);
     } catch (error) {
-        setError(error);
-        setData(mockDoctorData);
-        console.log("api failed fetching from mock..")
+      setError(error);
+      setData(mockDoctorData);
+      console.log(doctors);
+      console.log("api failed fetching from mock..");
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
 
-useEffect(() => {
-  fetchData();
-}, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-
-
-    return (
-        <>
-        {loading && <p>Loading...</p>}
-        <div class="doctor-container">
-          {doctors.length > 0 && doctors.map(doctor => (
+  return (
+    <>
+      {loading && <p>Loading...</p>}
+      <div className="doctor-container">
+        {doctors.length > 0 &&
+          doctors.map((doctor) => (
             <DoctorCard
               key={doctor.id}
               id={doctor.id}
@@ -47,9 +46,9 @@ useEffect(() => {
               specialty={doctor.specialty}
             />
           ))}
-        </div>
+      </div>
     </>
-      );
+  );
 };
 
 export default DoctorComponent;

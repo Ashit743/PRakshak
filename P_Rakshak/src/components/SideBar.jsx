@@ -5,7 +5,7 @@ import "../App.css"
 export default function SideBar() {
   return (
     <div>
-      <div tabindex="1" class="sidebar">
+      <div tabIndex="1" className="sidebar">
 
         <ul>
           <li className='mt-3'>
@@ -35,7 +35,7 @@ export default function SideBar() {
 
 
             <li>
-              <NavLink activeClassName='is-active' to="/doctor">
+              <NavLink activeClassName='is-active' to="/availabledocs">
                 <img src='assets/doctor.png' height={25} />
               </NavLink>
             </li>
