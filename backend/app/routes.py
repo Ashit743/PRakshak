@@ -70,7 +70,7 @@ def get_patientdata():
     try:
         id=data.get("id")
         cursor = connection.cursor()
-        cursor.execute("SELECT * FROM doctor where doctor_id= %s" %id)
+        cursor.execute("SELECT * FROM patient where patient_id= %s" %id)
         d=cursor.fetchall()
 
         return create_api_response("Success",data=d)
@@ -78,22 +78,43 @@ def get_patientdata():
         job_status = "Failure"
         error_message = str(e)
         return create_api_response(job_status,error=error_message)
-    
+
+#This route is to fetch all available doctors    
 @app.route('/api/availableDoctors', methods=['GET','POST'])
 def availableDoctors():
-    if not session.get("phone"):
-        # if not there in the session then redirect to the login page
-        return create_api_response("Failure", error="Not Authenticated")
-    
-    pass
+    # if not session.get("phone"):
+    #     # if not there in the session then redirect to the login page
+    #     return create_api_response("Failure", error="Not Authenticated")
+    data = json.loads(request.data)
+    try:
+        #id=data.get("id")
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM doctor")
+        d=cursor.fetchall()
+
+        return create_api_response("Success",data=d)
+    except Exception as e:
+        job_status = "Failure"
+        error_message = str(e)
+        return create_api_response(job_status,error=error_message)
 
 #This route is to get appointments of current user
 @app.route('/api/getAppointments', methods=['GET', 'POST'])
 def getAppointments():
-    if not session.get("phone"):
-        # if not there in the session then redirect to the login page
-        return create_api_response("Failure", error="Not Authenticated")
-    pass
+    data=json.loads(request.data)
+    # if not session.get("phone"):
+    #     # if not there in the session then redirect to the login page
+    #     return create_api_response("Failure", error="Not Authenticated")
+    try:
+        mobile=data.get("phone")
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM slot WHERE patient_id in (SELECT patient_fk FROM user WHERE mobile_no=%s)" % mobile)
+        a=cursor.fetchall()
+        return create_api_response("Success",data=a)
+    except Exception as e:
+        job_status = "Failure"
+        error_message = str(e)
+        return create_api_response(job_status,error=error_message)
 
 #This route is for getting percentage of health status
 @app.route('/api/predictHealth', methods=['GET', 'POST'])
