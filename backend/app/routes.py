@@ -78,6 +78,25 @@ def get_patientdata():
         job_status = "Failure"
         error_message = str(e)
         return create_api_response(job_status,error=error_message)
+    
+@app.route('/api/getUser', methods=['POST'])
+def getUser():
+    #check if the users exist or not
+    # if not session.get("phone"):
+    #     # if not there in the session then redirect to the login page
+    #     return create_api_response("Failure", error="Not Authenticated")
+    data = json.loads(request.data)
+    try:
+        id=data.get("number")
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM user where mobile_no= %s" %id)
+        d=cursor.fetchall()
+
+        return create_api_response("Success",data=d)
+    except Exception as e:
+        job_status = "Failure"
+        error_message = str(e)
+        return create_api_response(job_status,error=error_message)
 
 #This route is to fetch all available doctors    
 @app.route('/api/availableDoctors', methods=['GET','POST'])
