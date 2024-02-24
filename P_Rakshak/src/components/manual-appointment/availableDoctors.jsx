@@ -36,23 +36,17 @@ const DoctorComponent = () => {
   return (
     <>
       {loading && <p>Loading...</p>}
-
-      <div className="doctor-container row ">
-        <div className="col-12 doctor-available-wrapper">
-          <div className="row justify-content-between">
-            {doctors.length > 0 &&
-              doctors.map((doctor) => (
-                <DoctorCard
-                  key={doctor.id}
-                  id={doctor.id}
-                  name={doctor.name}
-                  specialty={doctor.specialty}
-                />
-              ))}
-          </div>
-        </div>
+      <div className="doctor-container">
+        {doctors.length > 0 &&
+          doctors.map((doctor) => (
+            <DoctorCard
+              key={doctor.id}
+              id={doctor.id}
+              name={doctor.name}
+              specialty={doctor.specialty}
+            />
+          ))}
       </div>
-
     </>
   );
 };
