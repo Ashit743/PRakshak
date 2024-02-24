@@ -58,7 +58,7 @@ function MonthlyCalendar() {
         <div className="calendar">
           <FullCalendar
             plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]} // Include interactionPlugin
-            initialView="timeGridWeek"
+            initialView="dayGridMonth"
             headerToolbar={{
               left: "prev,next today",
               center: "title",
