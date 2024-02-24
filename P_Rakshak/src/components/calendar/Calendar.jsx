@@ -154,7 +154,7 @@ function MonthlyCalendar() {
       <div className='col calendar-wrapper'>
         <div className="calendar-container">
           {loading && <p>Loading...</p>}
-          {events.length > 0 &&
+          {events.length > 0 &&(
             <div className="calendar">
               <FullCalendar
                 plugins={[timeGridPlugin, dayGridPlugin, interactionPlugin]} // Include interactionPlugin
