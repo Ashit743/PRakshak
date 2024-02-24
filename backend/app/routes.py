@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request,jsonify,json;
+from flask import Flask,request,jsonify,json,session,redirect
 import pymysql
 from db import connection
 from twilio.rest import Client
@@ -33,7 +33,7 @@ def sendotp():
         phonenumber=data.get("number")
         service_id=os.environ['TWILIO_SERVICE_ID']
         verification = client.verify.v2.services(service_id).verifications.create(to="+91"+phonenumber, channel='sms')
-        return create_api_response("success",data=verification.status)
+        return create_api_response("Success",data=verification.status)
     except Exception as e:
         job_status = "Failure"
         error_message = str(e)
@@ -47,15 +47,25 @@ def verifyotp():
         otp=data.get("otp")
         service_id=os.environ['TWILIO_SERVICE_ID']
         verification_check = client.verify.v2.services(service_id).verification_checks.create(to="+91"+phonenumber, code=otp)
-        return create_api_response("success",data=verification_check.status)
+        session["mobile"]=data.get("number")
+        return create_api_response("Success",data=verification_check.status)
     except Exception as e:
         job_status = "Failure"
         error_message = str(e)
         return create_api_response(job_status,error=error_message)
     
+@app.route('/logout', methods=['GET', 'POST'])
+def logout():
+    session["mobile"] = None
+    return create_api_response("Failure", error="Not Authenticated")
+    
 
 @app.route('/api/patientData', methods=['POST'])
 def get_patientdata():
+    #check if the users exist or not
+    # if not session.get("phone"):
+    #     # if not there in the session then redirect to the login page
+    #     return create_api_response("Failure", error="Not Authenticated")
     data = json.loads(request.data)
     try:
         id=data.get("id")
@@ -63,11 +73,56 @@ def get_patientdata():
         cursor.execute("SELECT * FROM doctor where doctor_id= %s" %id)
         d=cursor.fetchall()
 
-        return create_api_response("success",data=d)
+        return create_api_response("Success",data=d)
     except Exception as e:
         job_status = "Failure"
         error_message = str(e)
         return create_api_response(job_status,error=error_message)
+    
+@app.route('/api/availableDoctors', methods=['GET','POST'])
+def availableDoctors():
+    if not session.get("phone"):
+        # if not there in the session then redirect to the login page
+        return create_api_response("Failure", error="Not Authenticated")
+    
+    pass
+
+#This route is to get appointments of current user
+@app.route('/api/getAppointments', methods=['GET', 'POST'])
+def getAppointments():
+    if not session.get("phone"):
+        # if not there in the session then redirect to the login page
+        return create_api_response("Failure", error="Not Authenticated")
+    pass
+
+#This route is for getting percentage of health status
+@app.route('/api/predictHealth', methods=['GET', 'POST'])
+def predictHealth():
+    if not session.get("phone"):
+        # if not there in the session then redirect to the login page
+        return create_api_response("Failure", error="Not Authenticated")
+    pass
+
+#This route is to get food predictions for current user
+@app.route('/api/getFood', methods=['GET', 'POST'])
+def getFood():
+    if not session.get("phone"):
+        # if not there in the session then redirect to the login page
+        return create_api_response("Failure", error="Not Authenticated")
+    pass
+
+#This route is to update the available doctors
+@app.route('/api/updateAvailableDoctors', methods=['PUT'])
+def updateAvailableDoctors():
+    
+    pass
+
+#This route is to for counsellors
+@app.route('/api/counsellors', methods=['GET'])
+def counsellors():
+    
+    pass
+
 
 def create_api_response(status, data=None, error=None):
   """
