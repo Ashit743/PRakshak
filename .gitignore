@@ -160,3 +160,5 @@ cython_debug/
 #.idea/
 .vscode/launch.json
 P_Rakshak/node_modules
+backend/flask_session/
+P_Rakshak/yarn.lock
