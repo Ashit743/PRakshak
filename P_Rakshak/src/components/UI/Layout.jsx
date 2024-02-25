@@ -8,7 +8,7 @@ export default function Layout({ children }) {
       <SideBar></SideBar>
 
 
-      <div style={{
+      <div className='child-components' style={{
         width: 'calc(100% - 70px)',
         marginLeft: 'auto',
         padding: '27px',
