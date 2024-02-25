@@ -1,0 +1,10 @@
+{                               "age": 23,
+                                "gender": "male",
+                                "weight": 75,
+                                "height": 5.9,
+                                "veg_or_nonveg": "veg",
+                                "disease": "diabetic",
+                                "region": "India",
+                                "allergics": "peanuts",
+                                "foodtype": "Indian meals"
+}

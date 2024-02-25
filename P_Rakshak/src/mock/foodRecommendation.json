@@ -1,0 +1,26 @@
+{
+    "breakfast": {
+        "Daliya Upma": "A wholesome and fiber-rich breakfast option made with broken wheat and vegetables.",
+        "Idli with Sambar": "Steamed rice cakes served with a flavorful lentil soup called sambar.",
+        "Moong Dal Chilla": "A nutritious and protein-rich pancake made with moong dal and spices.",
+        "Oats Upma": "A healthy and filling breakfast option made with oats, vegetables, and spices.",
+        "Vegetable Poha": "A light and flavorful dish made with flattened rice, vegetables, and spices.",
+        "Vegetable Uttapam": "A savory pancake made with fermented rice and lentil batter, topped with vegetables."
+    },
+    "dinner": {
+        "Dal Makhani": "A creamy and flavorful lentil dish made with black lentils, kidney beans, and spices.",
+        "Methi Aloo": "A simple and healthy dish made with fenugreek leaves and potatoes, cooked with spices.",
+        "Paneer Tikka Masala": "Marinated paneer cubes cooked in a rich and creamy tomato-based gravy.",
+        "Roti with Palak Paneer": "Soft and thin whole wheat bread served with a delicious spinach and cottage cheese curry.",
+        "Vegetable Khichdi": "A comforting one-pot meal made with rice, lentils, and mixed vegetables.",
+        "Vegetable Pulao": "A fragrant and flavorful rice dish cooked with basmati rice, mixed vegetables, and aromatic spices."
+    },
+    "lunch": {
+        "Baingan Bharta": "Roasted eggplant mashed and cooked with onions, tomatoes, and spices.",
+        "Chapati with Mixed Vegetable Curry": "Soft and thin whole wheat bread served with a delicious mixed vegetable curry.",
+        "Dal Tadka": "A flavorful lentil dish made with yellow lentils, tempered with spices and ghee.",
+        "Mixed Vegetable Curry": "A delicious and nutritious curry made with a variety of vegetables and spices.",
+        "Palak Paneer": "A popular Indian dish made with spinach and cottage cheese, cooked in a creamy tomato-based gravy.",
+        "Vegetable Biryani": "A fragrant and flavorful rice dish cooked with basmati rice, mixed vegetables, and aromatic spices."
+    }
+}

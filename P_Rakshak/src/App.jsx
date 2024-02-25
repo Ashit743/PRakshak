@@ -29,13 +29,13 @@ const theme = createTheme({
 
 function App() {
   return (
-    <StrictMode>
+    <>
       <AppoinmentsProvider>
         <ThemeProvider theme={theme}>
           <RouterProvider router={router} />
         </ThemeProvider>
       </AppoinmentsProvider>
-    </StrictMode>
+    </>
   );
 }
 
