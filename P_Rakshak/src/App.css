@@ -298,4 +298,6 @@ body {
 .active {
 	background: #90cd88;
 	padding: 8px 20px;
+	padding: 17px 20px;
+    display: block;
 }
