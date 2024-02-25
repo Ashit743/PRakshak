@@ -105,6 +105,11 @@ body {
 	border-radius: 5px;
 }
 
+
+.patient-details:hover{
+	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+}
+
 .user-image {
 	text-align: center;
 	border-radius: 50%;
@@ -176,6 +181,10 @@ body {
 	left: 61px;
 }
 
+.profile-details:hover{
+	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+}
+
 .loader-line:before {
 	content: "";
 	position: absolute;
@@ -245,6 +254,15 @@ body {
 	border-radius: 5px;
 	/* text-align: center; */
 	/* color: #6FB762; */
+}
+
+
+.vital-card:hover{
+	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+}
+
+.prescription-box:hover{
+	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
 }
 
 .test-report-wrapper .test-report-main {
