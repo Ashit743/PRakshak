@@ -41,7 +41,7 @@ export default function SideBar() {
             </li>
 
 
-            <li className='position-relative'>
+            {/* <li className='position-relative'>
               <NavLink activeClassName='is-active' to="/notifications">
                 <img src='assets/notifications.png' height={25} />
               </NavLink>
@@ -52,7 +52,14 @@ export default function SideBar() {
               <NavLink activeClassName='is-active' to="/emergency">
                 <img src='assets/call.png' height={25} />
               </NavLink>
-            </li>
+            </li> */}
+
+
+            <li>
+              <NavLink activeClassName='is-active' to="/foodRecommendations">
+                <img src='assets/food-recommand.png' height={25} />
+              </NavLink>
+            </li> 
 
             <li>
               <NavLink activeClassName='is-active' to="/signup">

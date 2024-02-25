@@ -5,6 +5,7 @@ import DinnerMenu from '../meal-card/dinner';
 import './foodRecommendation.css'
 import mockData from '../../mock/foodRecommendation.json'
 import { getFoodRecommendation } from "../../service/foodRecommendation";
+import Loader from "../loader";
 
 
 
@@ -14,7 +15,7 @@ const FoodRecommendations = () => {
     const [error, setError] = useState(null);
 
     const fetchData = async () => {
-       
+
         setError(null);
 
         try {
@@ -28,7 +29,7 @@ const FoodRecommendations = () => {
             setError(error);
             setData(mockData);
             console.log("api failed fetching from mock..");
-        } 
+        }
     };
 
     useEffect(() => {
@@ -38,11 +39,10 @@ const FoodRecommendations = () => {
 
     return (
         <div className="food-recommendations">
-            {loading && <p>Loading...</p>}
             <div className="title">
                 <h1>DIETARY RECOMMENDATION</h1>
             </div>
-        {Object.keys(data).length> 0 && <div className="container">
+            {Object.keys(data).length > 0 ? <div className="container">
                 <div className="row">
                     <div className="col">
                         <BreakfastMenu breakfastItems={data.breakfast} />
@@ -54,7 +54,8 @@ const FoodRecommendations = () => {
                         <DinnerMenu dinnerItems={data.dinner} />
                     </div>
                 </div>
-            </div>}
+            </div> : loading && <div className="text-center"><Loader /></div>}
+
         </div>
     );
 };
