@@ -102,11 +102,7 @@ body {
 .profile-details {
 	background-color: #FFFFFF;
 	padding: 25px;
-	border-radius: 10px;
-}
-
-.profile-details:hover{
-	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+	border-radius: 5px;
 }
 
 .user-image {
@@ -128,11 +124,7 @@ body {
 .patient-details {
 	background-color: #FFFFFF;
 	padding: 25px;
-	border-radius: 10px;
-}
-
-.patient-details:hover{
-	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+	border-radius: 5px;
 }
 
 .patient-heading-title {
@@ -241,14 +233,10 @@ body {
 
 .vital-card {
 	background-color: white;
-	border-radius: 10px;
+	border-radius: 5px;
 	padding: 15px;
 	max-width: 23%;
 	min-height: 20vh;
-}
-
-.vital-card:hover{
-	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
 }
 
 .test-report-box {
@@ -285,12 +273,8 @@ body {
 .prescription-box {
 	background-color: #EEF6ED;
 	padding: 15px;
-	border-radius: 10px;
+	border-radius: 5px;
 	max-width: 31%;
-}
-
-.prescription-box:hover{
-	box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
 }
 
 .active {

@@ -83,9 +83,8 @@ const InputElement = styled("input")(
   color: ${theme.palette.mode === "dark" ? grey[300] : grey[900]};
   background: ${theme.palette.mode === "dark" ? grey[900] : "#fff"};
   border: 1px solid ${theme.palette.mode === "dark" ? grey[700] : grey[200]};
-  box-shadow: 0px 2px 4px ${
-    theme.palette.mode === "dark" ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.05)"
-  };
+  box-shadow: 0px 2px 4px ${theme.palette.mode === "dark" ? "rgba(0,0,0, 0.5)" : "rgba(0,0,0, 0.05)"
+    };
 
   &:hover {
     border-color: ${blue[400]};
@@ -93,8 +92,7 @@ const InputElement = styled("input")(
 
   &:focus {
     border-color: ${blue[400]};
-    box-shadow: 0 0 0 3px ${
-      theme.palette.mode === "dark" ? blue[600] : blue[200]
+    box-shadow: 0 0 0 3px ${theme.palette.mode === "dark" ? blue[600] : blue[200]
     };
   }
 
@@ -289,9 +287,9 @@ function OTPInput() {
       return;
     }
     try {
-      const response = await verifyotp(otp);
+      const response = await verifyotp(sessionStorage.getItem("phno"), otp);
       setOtp("");
-      if (response.data.status!="Failure") {
+      if (response.data.status != "Failure") {
         setAlertState((prev) => ({
           ...prev,
           open: true,
@@ -301,15 +299,15 @@ function OTPInput() {
         setTimeout(() => {
           navigate("/");
         }, 2000);
-      }else{
+      } else {
         setAlertState((prev) => ({
           ...prev,
           open: true,
-          type:"error",
+          type: "error",
           alertMessage: "Please enter the valid OTP",
         }));
       }
-      
+
     } catch (error) {
       setAlertState((prev) => ({
         ...prev,
@@ -360,7 +358,7 @@ function OTPInput() {
         horizontal={alertState.horizontal}
       />
       <FormHelperText id="phone no helper text">
-        Please Enter The 4 Digit Code Sent To 91+ ********65
+        Please Enter The 4 Digit Code Sent To 91+ {sessionStorage.getItem("phno")}
       </FormHelperText>
       <OTP
         separator={<span>-</span>}
