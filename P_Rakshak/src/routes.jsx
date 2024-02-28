@@ -8,6 +8,8 @@ import MonthlyCalendar from "./components/calendar/Calendar";
 import EmergencyCall from "./components/EmergencyCall";
 import Notifications from "./components/Notifications";
 import DoctorComponent from "./components/manual-appointment/availableDoctors";
+import FoodRecommendations from "./components/food-Rec/foodRecommendation";
+
 export const router = createBrowserRouter([
   {
     path: "/signup",
@@ -64,5 +66,13 @@ export const router = createBrowserRouter([
   {
     path: "/verify",
     element: <VerifyOTP />,
+  },
+  {
+    path: "/foodRecommendations",
+    element: (
+      <Layout>
+        <FoodRecommendations />
+      </Layout>
+    ),
   },
 ]);

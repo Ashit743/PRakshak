@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import mockDoctorData from "../../mock/doctorsSlots.json";
 import DoctorCard from "../doctor-cards/doctorCards";
 import "./availableDoctors.css";
-import axios from "axios";
+import { getDoctorSlots } from "../../service/doctors";
 
-// Define the available doctors data
-const fetchUrl = "https://api.example.com/data";
+
 
 // Define the Doctor component
 const DoctorComponent = () => {
@@ -18,8 +17,8 @@ const DoctorComponent = () => {
     setError(null);
 
     try {
-      const response = await axios.get(fetchUrl);
-      setData(response.doctors);
+      const response = await getDoctorSlots();
+      setData(response);
     } catch (error) {
       setError(error);
       setData(mockDoctorData);
@@ -37,17 +36,23 @@ const DoctorComponent = () => {
   return (
     <>
       {loading && <p>Loading...</p>}
-      <div class="doctor-container">
-        {doctors.length > 0 &&
-          doctors.map((doctor) => (
-            <DoctorCard
-              key={doctor.id}
-              id={doctor.id}
-              name={doctor.name}
-              specialty={doctor.specialty}
-            />
-          ))}
+
+      <div className="doctor-container row ">
+        <div className="col-12 doctor-available-wrapper">
+          <div className="row justify-content-between">
+            {doctors.length > 0 &&
+              doctors.map((doctor) => (
+                <DoctorCard
+                  key={doctor.id}
+                  id={doctor.id}
+                  name={doctor.name}
+                  specialty={doctor.specialty}
+                />
+              ))}
+          </div>
+        </div>
       </div>
+
     </>
   );
 };

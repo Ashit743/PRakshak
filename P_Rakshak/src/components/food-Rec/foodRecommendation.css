@@ -1,0 +1,13 @@
+.title{
+    border: 2px solid rgb(222, 222, 222);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color:rgb(61, 61, 61)
+
+}
+
+
+.title:hover{
+    box-shadow: 0 0.25rem 0.525rem 0 rgba(0, 0, 0, .08);
+}

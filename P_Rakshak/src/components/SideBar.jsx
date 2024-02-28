@@ -5,7 +5,7 @@ import "../App.css"
 export default function SideBar() {
   return (
     <div>
-      <div tabindex="1" class="nav-template">
+      <div tabIndex="1" className="sidebar">
 
         <ul>
           <li className='mt-3'>
@@ -35,13 +35,13 @@ export default function SideBar() {
 
 
             <li>
-              <NavLink activeClassName='is-active' to="/doctor">
+              <NavLink activeClassName='is-active' to="/availabledocs">
                 <img src='assets/doctor.png' height={25} />
               </NavLink>
             </li>
 
 
-            <li className='position-relative'>
+            {/* <li className='position-relative'>
               <NavLink activeClassName='is-active' to="/notifications">
                 <img src='assets/notifications.png' height={25} />
               </NavLink>
@@ -51,6 +51,19 @@ export default function SideBar() {
             <li>
               <NavLink activeClassName='is-active' to="/emergency">
                 <img src='assets/call.png' height={25} />
+              </NavLink>
+            </li> */}
+
+
+            <li>
+              <NavLink activeClassName='is-active' to="/foodRecommendations">
+                <img src='assets/food-recommand.png' height={25} />
+              </NavLink>
+            </li> 
+
+            <li>
+              <NavLink activeClassName='is-active' to="/signup">
+                <img src='assets/logout.png' height={25} />
               </NavLink>
             </li>
 

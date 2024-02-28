@@ -6,11 +6,73 @@ import urllib.request;
 from dotenv import load_dotenv
 from app import app
 from flask_cors import CORS
+
+from langchain.prompts import PromptTemplate
+from langchain.chains import LLMChain
+from langchain.chat_models import ChatOpenAI
+import json
+from flask import jsonify, request
+
+
 import os
+
+
 load_dotenv()
 account_sid = os.environ['TWILIO_ACCOUNT_SID']
 auth_token = os.environ['TWILIO_AUTH_TOKEN']
 client = Client(account_sid, auth_token)
+
+semicolons_gateway_api_key = os.environ['OPEN_API_KEY'] # Insert the provided API key
+semicolons_gateway_base_url = "https://4veynppxjm.us-east-1.awsapprunner.com"
+model = "gpt-35-turbo-16k"
+
+llm_resto = ChatOpenAI(
+    model_name=model,
+    temperature=0.1,
+    openai_api_base=semicolons_gateway_base_url, # openai_api_base represents the endpoint the Langchain object will make a call to when invoked
+    openai_api_key=semicolons_gateway_api_key,
+)
+
+prompt_template_resto = PromptTemplate(
+    input_variables=['age', 'gender', 'weight', 'height', 'veg_or_nonveg', 'disease', 'region', 'allergics', 'foodtype'],
+    template="Diet Recommendation System:\n"
+             "I want you to recommend 6 breakfast names, 6 lunch names, 6 dinner names in json format, "
+             "breakfast as 1st key, lunch as 2nd key, dinner as 3rd key"
+             "each value will food item as key and it's description as value"
+             "while creating json dont add json just plane output"
+             "based on the following criteria:\n"
+             "take care of his medical condition as importance:\n"
+             "syntactically correct json"
+             "Person age: {age}\n"
+             "Person gender: {gender}\n"
+             "Person weight: {weight}\n"
+             "Person height: {height}\n"
+             "Person veg_or_nonveg: {veg_or_nonveg}\n"
+             "Person generic disease: {disease}\n"
+             "Person region: {region}\n"
+             "Person allergics: {allergics}\n"
+             "Person foodtype: {foodtype}."
+
+)
+
+
+input_mock_data = {             'age': 23,
+                                'gender': "male",
+                                'weight': 75,
+                                'height': 5.9,
+                                'veg_or_nonveg': "veg",
+                                'disease': "diabetic",
+                                'region': "India",
+                                'allergics': "peanuts",
+                                'foodtype': 'Indian meals'
+                    }
+
+
+def getData(inputData) :
+    chain_resto = LLMChain(llm=llm_resto, prompt=prompt_template_resto)
+    results = chain_resto.run(inputData)
+    results = json.loads(results)
+    return results
 
 
 
@@ -162,6 +224,15 @@ def updateAvailableDoctors():
 def counsellors():
     
     pass
+
+@app.route('/recommend', methods=['GET','POST'])
+def handleData() :
+        try:
+            jsonData = request.get_json()
+            print(jsonData)
+            return getData(jsonData)
+        except Exception as e:
+            return jsonify({'error': 'Internal server error'}), 500
 
 
 def create_api_response(status, data=None, error=None):

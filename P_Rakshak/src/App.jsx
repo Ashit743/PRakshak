@@ -1,9 +1,9 @@
-
 import { StrictMode } from "react";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes";
 import { ThemeProvider } from "@emotion/react";
 import { createTheme, alpha, getContrastRatio } from "@mui/material";
+import { AppoinmentsProvider } from "./context/DoctorsCtx";
 const GreenBase = "#6fb062";
 const GreenMain = alpha(GreenBase, 0.7);
 const theme = createTheme({
@@ -18,23 +18,24 @@ const theme = createTheme({
   MuiButton: {
     styleOverrides: {
       root: {
-        '&:hover': {
-          color:GreenMain,
-          bgColor:"white"
-        }
-      }
-    }
-  }
+        "&:hover": {
+          color: GreenMain,
+          bgColor: "white",
+        },
+      },
+    },
+  },
 });
-
 
 function App() {
   return (
-    <StrictMode>
-      <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </StrictMode>
+    <>
+      <AppoinmentsProvider>
+        <ThemeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </AppoinmentsProvider>
+    </>
   );
 }
 
