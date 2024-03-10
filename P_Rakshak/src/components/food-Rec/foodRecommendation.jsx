@@ -21,7 +21,6 @@ const FoodRecommendations = () => {
         try {
             setLoading(true);
             const response = await getFoodRecommendation();
-            console.log(response)
             setData(response.data);
             setLoading(false);
         } catch (error) {

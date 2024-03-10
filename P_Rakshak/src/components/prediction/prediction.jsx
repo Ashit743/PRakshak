@@ -15,6 +15,7 @@ export default function Prediction() {
         setResponse(result.data);
       } catch (error) {
         console.error("Error:", error);
+        setResponse({ prediction: "0.919991" })
         console.log("fetching from mock... ");
       }
     };

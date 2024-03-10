@@ -14,7 +14,10 @@ import json
 from flask import jsonify, request
 
 
+
 import os
+
+
 
 
 load_dotenv()
@@ -69,10 +72,13 @@ input_mock_data = {             'age': 23,
 
 
 def getData(inputData) :
-    chain_resto = LLMChain(llm=llm_resto, prompt=prompt_template_resto)
-    results = chain_resto.run(inputData)
-    results = json.loads(results)
-    return results
+    try:
+        chain_resto = LLMChain(llm=llm_resto, prompt=prompt_template_resto)
+        results = chain_resto.run(inputData)
+        results = json.loads(results)
+        return results
+    except Exception:
+        pass
 
 
 

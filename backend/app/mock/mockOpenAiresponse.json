@@ -1,0 +1,26 @@
+{
+    "breakfast": {
+        "Oats Porridge": "A bowl of oats cooked in water or milk, topped with fresh fruits like berries and a sprinkle of cinnamon. Oats are low in glycemic index and help in managing blood sugar levels.",
+        "Vegetable Upma": "A savory South Indian dish made from semolina, mixed with sautéed vegetables like carrots, peas, and beans, seasoned with mustard seeds and curry leaves. Upma is a wholesome breakfast option rich in fiber.",
+        "Idli Sambar": "Steamed rice cakes served with a flavorful lentil-based stew called sambar. Idli sambar is a traditional South Indian breakfast that is light, easy to digest, and provides a good balance of carbohydrates and protein.",
+        "Poha": "Flattened rice flakes cooked with onions, green chilies, and turmeric, garnished with peanuts (can be excluded based on allergics) and fresh coriander leaves. Poha is a popular breakfast choice in India, light and nutritious.",
+        "Vegetable Dalia": "Broken wheat cooked with assorted vegetables like carrots, peas, and capsicum, seasoned with spices like cumin and coriander. Dalia is a wholesome breakfast option high in fiber and nutrients.",
+        "Moong Dal Cheela": "Lentil-based savory pancakes made from ground moong dal (green gram), mixed with chopped onions, tomatoes, and green chilies, seasoned with spices like cumin and turmeric. Moong dal cheela is rich in protein and low in glycemic index."
+    },
+    "lunch": {
+        "Chapati with Mixed Vegetable Curry": "Whole wheat chapatis served with a mixed vegetable curry made from seasonal vegetables like cauliflower, carrots, and peas, cooked in a tomato-onion base with mild spices.",
+        "Dal Tadka with Brown Rice": "Yellow lentils tempered with cumin seeds, garlic, and dried red chilies, served with brown rice. Dal tadka is a rich source of protein and fiber, while brown rice is low in glycemic index.",
+        "Vegetable Khichdi": "A one-pot meal made from rice, lentils, and assorted vegetables like carrots, beans, and potatoes, seasoned with turmeric and cumin seeds. Khichdi is light, easy to digest, and nutritious.",
+        "Palak Paneer with Roti": "Creamy spinach curry with cubes of cottage cheese (paneer), flavored with garlic, ginger, and garam masala, served with whole wheat rotis. Palak paneer is rich in iron and calcium.",
+        "Vegetable Pulao": "Fragrant basmati rice cooked with mixed vegetables like carrots, beans, and peas, seasoned with whole spices like cinnamon and cardamom. Vegetable pulao is a flavorful and nutritious lunch option.",
+        "Cucumber Raita with Jeera Rice": "Cooling yogurt mixed with grated cucumber and tempered with cumin seeds, served with jeera (cumin) rice. Raita helps in digestion, while jeera rice adds a burst of flavor."
+    },
+    "dinner": {
+        "Vegetable Soup with Whole Wheat Bread": "A hearty soup made with mixed vegetables like carrots, beans, and tomatoes, flavored with herbs like thyme and parsley, served with whole wheat bread slices.",
+        "Masoor Dal with Quinoa": "Red lentil soup cooked with tomatoes, onions, and mild spices, served with quinoa. Masoor dal is rich in protein and quinoa adds a dose of essential amino acids.",
+        "Stir-Fried Vegetables with Brown Rice": "Assorted vegetables like bell peppers, broccoli, and mushrooms stir-fried with garlic and soy sauce, served with brown rice. This dish is low in fat and packed with nutrients.",
+        "Vegetable Clear Soup": "Light and clear soup made with vegetables like carrots, cabbage, and beans, seasoned with ginger and garlic, and garnished with fresh coriander leaves. Vegetable clear soup is soothing and easy to digest.",
+        "Moong Dal Khichdi": "A simple and comforting one-pot meal made from rice and split moong dal, seasoned with cumin seeds and turmeric. Moong dal khichdi is gentle on the stomach and aids in digestion.",
+        "Methi Paratha with Raita": "Whole wheat flatbread stuffed with fenugreek leaves (methi) and spices, served with cooling cucumber raita. Methi paratha is rich in fiber and nutrients, while raita helps in digestion."
+    }
+}
