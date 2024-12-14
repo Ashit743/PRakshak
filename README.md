@@ -37,5 +37,9 @@ for running ML Model - need to have docker desktop
 download the container and run it locally 
 
 
+deployed-version: some services may not respond need to change hosting platform
+         https://prakshak-1.onrender.com
+
+
 
 
